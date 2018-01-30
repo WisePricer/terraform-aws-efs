@@ -5,15 +5,17 @@
 # https://www.terraform.io/docs/providers/aws/r/efs_mount_target.html
 
 module "enabled" {
-  source  = "devops-workflow/boolean/local"
-  version = "0.1.0"
+  #source  = "devops-workflow/boolean/local"
+  #version = "0.1.0"
+  source  = "git::https://github.com/WisePricer/terraform-local-boolean.git?ref=tags/v0.1.1"
   value   = "${var.enabled}"
 }
 
 # Define composite variables for resources
 module "label" {
-  source        = "devops-workflow/label/local"
-  version       = "0.1.0"
+  #source        = "devops-workflow/label/local"
+  #version       = "0.1.0"
+  source        = "git::https://github.com/WisePricer/terraform-local-label.git?ref=tags/v0.1.3"
   organization  = "${var.organization}"
   name          = "${var.name}"
   namespace-env = "${var.namespace-env}"
